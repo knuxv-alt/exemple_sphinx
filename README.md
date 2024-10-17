@@ -44,6 +44,7 @@ extensions = [
     'sphinx.ext.intersphinx',  # Permet de créer des liens vers la documentation d'autres projets externes
     "sphinx_autodoc_typehints"  # Inclut automatiquement les annotations de types Python dans la documentation
 ]
+intersphinx_mapping = {'python': ('https://docs.python.org/3', None)}
 ```
 
 - **Explications** :
