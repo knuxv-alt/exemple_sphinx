@@ -1,4 +1,7 @@
+### Exemples de documentation avec Sphinx
 
+- [Pandas](https://pandas.pydata.org/docs/)
+- [Scikit-learn](https://scikit-learn.org/stable/)
 
 ### **Rappel pour Configurer Sphinx**
 
