@@ -29,7 +29,8 @@ pip install sphinx-rtd-theme
   ```bash
   sphinx-quickstart
   ```
-  Cela génère des fichiers de configuration de base pour Sphinx, comme `conf.py` et `index.rst`.
+  Cela génère un prompt qui demande des infos avant de générer les fichiers de configuration de base pour Sphinx, comme `conf.py` et `index.rst`.
+  Choississez l'option (y) pour séparer le `build` et le `source`
 
 ---
 
@@ -72,12 +73,14 @@ Ajoutez la configuration suivante pour indiquer à Sphinx où trouver vos fichie
 ```python
 import os
 import sys
+## Le chemin depuis conf.py vers les fichiers .py que l'on veut documenter.
 sys.path.insert(0, os.path.abspath('../../'))
 ```
 
 Suivant si on veut le résultat en numpy ou google:  
-- `napoleon_google_docstring = False // True  `  
-- `napoleon_numpy_docstring = True // False`
+- `napoleon_google_docstring = True  `
+  ou 
+- `napoleon_numpy_docstring = True `
 
 Pour enlever le nom des modules avant chaque function:
 - `add_module_names = False` # True par défaut
@@ -95,6 +98,9 @@ Utilisez la commande `sphinx-apidoc` pour générer les fichiers `.rst` à parti
 ```bash
 # depuis la racine, le point signifie le dossier courant
 sphinx-apidoc -f -o doc/source/ .
+
+# si vous êtes dans doc
+sphinx-apidoc -f -o source/ ../
 ```
 
 ---
@@ -119,9 +125,9 @@ Même indentation que le reste mais avec un saut de ligne.
 Générez la documentation HTML avec la commande :
 
 ```bash
-sphinx-build -b html chemin_dossier_source chemin_dossier_build
+sphinx-build -b html chemin_vers_dossier_source chemin_vers_dossier_build
 
-#Par ex
+#Par ex, si vous êtes dans la racine:
 sphinx-build -b html doc/source doc/build
 ```
 
