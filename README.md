@@ -107,7 +107,7 @@ sphinx-apidoc -f -o source/ ../
 
 #### **5. Modifier `index.rst`**
 
-Ajoutez dans `index.rst` les mots main et utils pour que les deux scripts soient affichés dans l'index de la documentation.  
+Ajoutez dans `index.rst` les mots correspondant au nom des fichiers que vous voulez documenter dans l'index de la documentation. Par exemple, si nous avons deux fichiers main.py et utils.py
 Même indentation que le reste mais avec un saut de ligne.
 ```rst
 .. toctree::
